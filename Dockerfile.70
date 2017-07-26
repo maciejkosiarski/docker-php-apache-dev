@@ -60,8 +60,6 @@ RUN adduser --disabled-password --gecos '' --uid ${DEV_USER_UID} dev \
     && adduser dev sudo \
     && printf "dev ALL=(ALL) NOPASSWD: ALL\n" > /etc/sudoers.d/dev
 
-RUN printf "export APACHE_RUN_USER=dev\nexport APACHE_RUN_GROUP=dev\n" >> /etc/apache2/envvars
-
 USER dev
 
 VOLUME /www
